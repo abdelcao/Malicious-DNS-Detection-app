@@ -65,23 +65,23 @@ st.markdown("""
 # Load model and tokenizer
 @st.cache_resource
 def load_model_artifacts():
-    """Load the trained model, tokenizer, and configuration"""
+    """Load the trained model, tokenizer, and configuration from model folder"""
     try:
         # Load model
-        model = keras.models.load_model('dga_detector_model.h5')
+        model = keras.models.load_model('./model/best_dga_model.h5')
         
         # Load tokenizer
-        with open('tokenizer.pkl', 'rb') as f:
+        with open('./model/tokenizer.pkl', 'rb') as f:
             tokenizer = pickle.load(f)
         
         # Load configuration
-        with open('model_config.pkl', 'rb') as f:
+        with open('./model/model_config.pkl', 'rb') as f:
             config = pickle.load(f)
         
         return model, tokenizer, config
     except Exception as e:
         st.error(f"Error loading model artifacts: {str(e)}")
-        st.info("Please ensure the model files are in the same directory as this app.")
+        st.info("Please ensure the model files are in the model/ directory.")
         return None, None, None
 
 def predict_domain(domain, model, tokenizer, max_length):

@@ -6,7 +6,7 @@ This complete package contains everything you need to train and deploy a deep le
 
 ### Core Files
 1. **dga_detection_training.ipynb** - Complete Jupyter notebook for training the model
-2. **app.py** - Streamlit web interface for the trained model
+2. **main.py** - Streamlit web interface for the trained model
 3. **predict.py** - Command-line tool for predictions
 4. **requirements.txt** - All Python dependencies
 
@@ -93,7 +93,7 @@ After training, you have three ways to use the model:
 #### Option 1: Web Interface (Recommended for Interactive Use)
 
 ```bash
-streamlit run app.py
+streamlit run main.py
 ```
 
 **Features:**
@@ -277,7 +277,7 @@ Based on a balanced dataset of 674,902 domains:
 ### Issue: "Streamlit not opening"
 **Solution:** Check if port 8501 is available, or specify a different port:
 ```bash
-streamlit run app.py --server.port 8502
+streamlit run main.py --server.port 8502
 ```
 
 ### Issue: "Import errors"
@@ -338,7 +338,7 @@ dga-detector/
 │   ├── tokenizer.pkl
 │   └── model_config.pkl
 ├── Scripts/
-│   ├── app.py
+│   ├── main.py
 │   ├── predict.py
 │   └── dga_detection_training.ipynb
 ├── Results/
@@ -385,7 +385,7 @@ If you encounter issues:
 
 ## ⚠️ Important Notes
 
-- **Training Required**: You must run the notebook before using app.py or predict.py
+- **Training Required**: You must run the notebook before using main.py or predict.py
 - **Virtual Environment**: Always use the virtual environment to avoid conflicts
 - **GPU Optional**: Model trains fine on CPU, just takes longer
 - **Dataset Size**: Large datasets mean longer training times but better accuracy
