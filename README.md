@@ -37,7 +37,7 @@ Domain Generation Algorithms (DGAs) are commonly used by malware to generate dom
 ```
 dga-detector/
 ├── dga_detection_training.ipynb  # Jupyter notebook for training
-├── app.py                         # Streamlit web interface
+├── main.py                         # Streamlit web interface
 ├── requirements.txt               # Python dependencies
 ├── README.md                      # Project documentation
 ├── dga_websites.csv              # DGA domains dataset
@@ -98,7 +98,7 @@ jupyter notebook dga_detection_training.ipynb
 After training the model, launch the Streamlit app:
 
 ```bash
-streamlit run app.py
+streamlit run main.py
 ```
 
 The app will open in your browser at `http://localhost:8501`
